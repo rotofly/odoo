@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PYVOBJECT//NONSGML Version 1//EN
+BEGIN:VEVENT
+UID:20150316T103335Z-25901@Flau-Server
+DTSTART:20150318T020000Z
+DTEND:20150318T103000Z
+ATTENDEE:MAILTO:admin@yourcompany.example.com
+ATTENDEE:MAILTO:asusteK@yourcompany.example.com
+ATTENDEE:MAILTO:deltapc@yourcompany.example.com
+ATTENDEE:MAILTO:mediapole@yourcompany.example.com
+ATTENDEE:MAILTO:openelecapplications@yourcompany.example.com
+CREATED:20150316T103335Z
+SUMMARY:Presentation for new Services
+END:VEVENT
+END:VCALENDAR

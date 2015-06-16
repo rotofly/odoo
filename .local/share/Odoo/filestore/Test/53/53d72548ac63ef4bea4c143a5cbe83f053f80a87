@@ -1,0 +1,48 @@
+diff --git addons/auth_crypt/auth_crypt.py addons/auth_crypt/auth_crypt.py
+index c5bd579..a7e3a82 100644
+--- addons/auth_crypt/auth_crypt.py
++++ addons/auth_crypt/auth_crypt.py
+@@ -22,6 +22,8 @@ _logger = logging.getLogger(__name__)
+ magic_md5 = '$1$'
+ magic_sha256 = '$5$'
+ 
++openerp.addons.base.res.res_users.USER_PRIVATE_FIELDS.append('password_crypt')
++
+ def gen_salt(length=8, symbols=None):
+     if symbols is None:
+         symbols = ascii_letters + digits
+@@ -173,5 +175,4 @@ class res_users(osv.osv):
+             # Reraise password incorrect
+             raise
+ 
+-
+ # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+diff --git openerp/addons/base/res/res_users.py openerp/addons/base/res/res_users.py
+index 1dcae1f..c678def 100644
+--- openerp/addons/base/res/res_users.py
++++ openerp/addons/base/res/res_users.py
+@@ -34,6 +34,10 @@ from openerp.tools.translate import _
+ 
+ _logger = logging.getLogger(__name__)
+ 
++
++# Only users who can modify the user (incl. the user herself) see the real contents of these fields
++USER_PRIVATE_FIELDS = ['password']
++
+ class groups(osv.osv):
+     _name = "res.groups"
+     _description = "Access Groups"
+@@ -277,8 +281,10 @@ class res_users(osv.osv):
+ 
+     def read(self, cr, uid, ids, fields=None, context=None, load='_classic_read'):
+         def override_password(o):
+-            if 'password' in o and ('id' not in o or o['id'] != uid):
+-                o['password'] = '********'
++            if ('id' not in o or o['id'] != uid):
++                for f in USER_PRIVATE_FIELDS:
++                    if f in o:
++                        o[f] = '********'
+             return o
+ 
+         if fields and (ids == [uid] or ids == uid):
+

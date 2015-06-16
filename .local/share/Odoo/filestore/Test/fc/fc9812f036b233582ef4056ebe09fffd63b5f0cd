@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PYVOBJECT//NONSGML Version 1//EN
+BEGIN:VEVENT
+UID:20150224T135759Z-90309@Flau-Server
+DTSTART:20141203T090000Z
+DTEND:20141203T100000Z
+ATTENDEE:MAILTO:christophe.vanhoutte@flau.fr
+ATTENDEE:MAILTO:noemail@mail.com
+CREATED:20150224T135759Z
+DESCRIPTION:Mr WITZ me dit que leur systeme est basé sur des bassin de d
+ écantation.\nutilise aujourd'hui des filtres automatiques (russel finex)\
+ ndégrilleur\, filtre\, bassin de décantation.\nVoir pour les filtres aut
+ omatiques.
+LOCATION:Halluin
+SUMMARY:GALLOO Plastics présentation 
+END:VEVENT
+END:VCALENDAR

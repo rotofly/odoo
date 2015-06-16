@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PYVOBJECT//NONSGML Version 1//EN
+BEGIN:VEVENT
+UID:20150316T103332Z-11239@Flau-Server
+DTSTART:20150303T102000Z
+DTEND:20150303T163000Z
+ATTENDEE:MAILTO:openelecapplications@yourcompany.example.com
+CREATED:20150316T103332Z
+DESCRIPTION:Meeting to discuss project plan and hash out the details of im
+ plementation.
+SUMMARY:Follow-up for Project proposal
+END:VEVENT
+END:VCALENDAR

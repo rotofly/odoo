@@ -1,0 +1,14 @@
+Dim fichier
+Set fichier = CreateObject("Excel.application")
+
+Set objbook = fichier.Workbooks.open("C:\Users\STEP ORBEC\Desktop\bilanMensuel.xlsm")
+
+Set objSheet = objbook.WorkSheets(1)
+
+fichier.Visible = true
+
+fichier.Run "Feuil1.script"
+
+objbook.save
+objbook.close 
+fichier.quit
